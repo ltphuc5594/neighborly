@@ -11,9 +11,4 @@ RESTPLUS_404_HELP = True
 API_VERSION = 'v1'
 
 #-------- Azure constants
-
-# API_URL format: "https://[FUNCTION_APP_NAME_GOES_HERE].azurewebsites.net"
-#API_URL = " https://neighborlyapi.azurewebsites.net/api/"
-
-# for local host if Azure functions served locally
-API_URL = "http://localhost:7071/api"
+API_URL = "https://neighborly2023.azurewebsites.net/api/"

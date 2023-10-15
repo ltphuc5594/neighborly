@@ -1,18 +1,17 @@
 import azure.functions as func
 import pymongo
-import json
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
 
+def main(req: func.HttpRequest) -> func.HttpResponse:
     id = req.params.get('id')
 
     if id:
         try:
-            url = "localhost"  # TODO: Update with appropriate MongoDB connection information
+            url = "mongodb://labdemo:9oMnympboqcd6bUXbTUnig9PNuORjVNunYYsmRvDjGaWWdE9ypPbLoUa7UW7XvhCNV32KySVC3RqACDbORv3Cw==@labdemo.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&replicaSet=globaldb&maxIdleTimeMS=120000&appName=@labdemo@"
             client = pymongo.MongoClient(url)
-            database = client['azure']
+            database = client['test']
             collection = database['posts']
 
             query = {'_id': ObjectId(id)}
